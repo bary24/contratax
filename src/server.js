@@ -6,6 +6,7 @@ const path = require("path");
 const corsOptions = {
 	origin: "http://localhost:3000",
 };
+const PORT = process.env.port;
 const app = express();
 app.use(express.json());
 app.use(cors(corsOptions));
@@ -35,6 +36,6 @@ app.post("/", (req, res) => {
 app.get("/", async (req, res) => {
 	res.sendFile(path.join(__dirname, "..", "views", "index.html"));
 });
-app.listen(5000, () => {
-	console.log("Server working on port 5000");
+app.listen(PORT, () => {
+	console.log("Server working ");
 });
