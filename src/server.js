@@ -36,6 +36,6 @@ app.post("/", (req, res) => {
 app.get("/", async (req, res) => {
 	res.sendFile(path.join(__dirname, "..", "views", "index.html"));
 });
-app.listen(PORT || 5000, () => {
+app.listen(PORT, () => {
 	console.log("Server working ");
 });
