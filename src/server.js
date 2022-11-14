@@ -6,7 +6,7 @@ const path = require("path");
 const corsOptions = {
 	origin: "http://localhost:3000",
 };
-const PORT = process.env.port;
+const PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(cors(corsOptions));
