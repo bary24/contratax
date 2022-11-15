@@ -14,19 +14,23 @@ app.use(express.static(path.join(__dirname, "..", "views")));
 
 app.post("/", (req, res) => {
 	const productInfo = req.body;
+	console.log(productInfo);
 	let commission;
 	let commissionValue;
 	const { price, category } = productInfo;
-	if (category === "mobile" && 500 <= price < 700) commission = 0.015;
-	else if (category === "mobile" && 700 <= price < 900) commission = 0.02;
-	else if (category === "mobile" && 900 <= price < 1000) commission = 0.025;
+	console.log(price);
+	console.log(category);
+	if (category === "mobile" && price < 700 && price >= 500) commission = 0.015;
+	else if (category === "mobile" && price < 900 && price >= 700) commission = 0.02;
+	else if (category === "mobile" && price < 1000 && price >= 900) commission = 0.025;
 	else if (category === "mobile" && price > 1000) commission = 0.03;
-	else if (category === "laptop" && 800 <= price < 900) commission = 0.0125;
-	else if (category === "laptop" && 900 <= price < 1000) commission = 0.015;
-	else if (category === "laptop" && 1000 <= price < 1200) commission = 0.017;
-	else if (category === "laptop" && 1200 <= price < 1500) commission = 0.02;
-	else if (category === "laptop" && 1500 <= price < 2000) commission = 0.025;
+	else if (category === "laptop" && price < 900 && price >= 800) commission = 0.0125;
+	else if (category === "laptop" && price < 1000 && price >= 900) commission = 0.015;
+	else if (category === "laptop" && price < 1200 && price >= 1000) commission = 0.017;
+	else if (category === "laptop" && price < 1500 && price >= 1200) commission = 0.02;
+	else if (category === "laptop" && price < 2000 && price >= 1500) commission = 0.025;
 	else if (category === "laptop" && price >= 2000) commission = 0.03;
+	console.log(commission);
 
 	commissionValue = price * commission;
 
