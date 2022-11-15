@@ -23,7 +23,7 @@ app.post("/", (req, res) => {
 	if (category === "mobile" && price < 700 && price >= 500) commission = 0.015;
 	else if (category === "mobile" && price < 900 && price >= 700) commission = 0.02;
 	else if (category === "mobile" && price < 1000 && price >= 900) commission = 0.025;
-	else if (category === "mobile" && price > 1000) commission = 0.03;
+	else if (category === "mobile" && price >= 1000) commission = 0.03;
 	else if (category === "laptop" && price < 900 && price >= 800) commission = 0.0125;
 	else if (category === "laptop" && price < 1000 && price >= 900) commission = 0.015;
 	else if (category === "laptop" && price < 1200 && price >= 1000) commission = 0.017;
