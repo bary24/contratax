@@ -34,7 +34,7 @@ app.post("/", (req, res) => {
 
 	commissionValue = price * commission;
 
-	return res.status(200).json(`our service fees  are equal to ${commissionValue} dollars`);
+	return res.status(200).json(`Our service fees  are equal to ${commissionValue} dollars`);
 });
 
 app.get("/", async (req, res) => {
